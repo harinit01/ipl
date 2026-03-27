@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - IPL ERA</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 🔥 DARK IPL BACKGROUND */
+body {
+    color: white;
+
+    background: 
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+        url('https://www.thestatesman.com/wp-content/uploads/2026/03/IPL_X-1-1024x576.webp');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background: linear-gradient(90deg, #0a0a0a, #1c1c1c);
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #ddd;
+}
+
+nav a:hover {
+    color: #00c3ff;
+}
+
+/* TITLE */
+.title {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.title h1 {
+    font-size: 50px;
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* CONTAINER */
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+/* CONTACT BOX */
+.contact-box {
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(8px);
+}
+
+/* GRID */
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.col {
+    width: 48%;
+}
+
+/* TEXT */
+h3 {
+    margin-bottom: 10px;
+    color: #00c3ff;
+}
+
+p {
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* FORM */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    margin-bottom: 15px;
+}
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo span {
+    color: #00c3ff;
+}
+/* BUTTON */
+button {
+    background: linear-gradient(90deg, #ff512f, #ff0000);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div style="display:flex; align-items:center; gap:10px;">
+        <a href="index.html">
+            <img src="https://static.india.com/wp-content/uploads/2020/08/IPL-Logo.jpg" style="height:40px;">
+        </a>
+<div class="logo"><span>IPL</span> ERA</div>    </div>
+    </div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="matches.html">MATCHES</a>
+        <a href="teams.html">TEAMS</a>
+        <a href="highlights.html">HIGHLIGHTS</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
+
+<!-- TITLE -->
+<div class="title">
+    <h1>CONTACT US</h1>
+</div>
+
+<div class="container">
+
+    <!-- CONTACT INFO -->
+    <div class="contact-box">
+        <div class="row">
+            <div class="col">
+                <h3>Address</h3>
+                <p>BCCI-IPL 4th Floor, Cricket Centre, Wankhede Stadium, Mumbai - 400020, India</p>
+            </div>
+
+            <div class="col">
+                <h3>Contact</h3>
+                <p>📞 +91 22 67598800</p>
+                <p>📞 +91 22 61580300</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="contact-box">
+        <h3>Send Feedback</h3>
+
+        <form>
+            <label>I wish to</label>
+            <select>
+                <option>Provide Feedback</option>
+                <option>Report Issue</option>
+                <option>General Inquiry</option>
+            </select>
+
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter your email">
+
+            <label>Message</label>
+            <textarea rows="5" placeholder="Write your message..."></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

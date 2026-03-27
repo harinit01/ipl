@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Highlights - IPL ERA</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* DARK BACKGROUND */
+body {
+    color: white;
+    background:
+        linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.95)),
+        url('https://www.thestatesman.com/wp-content/uploads/2026/03/IPL_X-1-1024x576.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background: linear-gradient(90deg, #000, #111);
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #ccc;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00c3ff;
+}
+
+/* TITLE */
+.title {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.title h1 {
+    font-size: 50px;
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* SECTION */
+.section {
+    width: 85%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo span {
+    color: #00c3ff;
+}
+/* GRID */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* CARD */
+.card {
+    background: #111;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* IMAGE */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* PLAY BUTTON OVERLAY */
+.card a {
+    position: relative;
+    display: block;
+}
+
+.card a::after {
+    content: '▶';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+    color: white;
+    background: rgba(0,0,0,0.6);
+    padding: 12px 18px;
+    border-radius: 50%;
+}
+
+/* CONTENT */
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 13px;
+    color: #aaa;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px){
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px){
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div style="display:flex; align-items:center; gap:10px;">
+        <a href="index.html">
+            <img src="https://static.india.com/wp-content/uploads/2020/08/IPL-Logo.jpg" style="height:40px;">
+        </a>
+<div class="logo"><span>IPL</span> ERA</div>    </div>
+    </div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="matches.html">MATCHES</a>
+        <a href="teams.html">TEAMS</a>
+        <a href="highlights.html">HIGHLIGHTS</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
+
+<!-- TITLE -->
+<div class="title">
+    <h1>MATCH HIGHLIGHTS</h1>
+</div>
+
+<!-- VIDEO SECTION -->
+<div class="section">
+    <div class="cards">
+
+        <!-- VIDEO 1 -->
+        <div class="card">
+            <a href="https://www.youtube.com/watch?v=XXC8uRjskQI" target="_blank">
+                <img src="https://img.youtube.com/vi/XXC8uRjskQI/hqdefault.jpg">
+            </a>
+            <div class="card-content">
+                <h3>RCB Trophy Journey 2025</h3>
+                <p>Watch match highlights and key moments.</p>
+            </div>
+        </div>
+
+        <!-- VIDEO 2 -->
+        <div class="card">
+            <a href="https://www.youtube.com/watch?v=fGcvvIAX4XI" target="_blank">
+                <img src="https://img.youtube.com/vi/fGcvvIAX4XI/hqdefault.jpg">
+            </a>
+            <div class="card-content">
+                <h3>MI vs CSK Thriller 2025</h3>
+                <p>Last over drama and match-winning shots.</p>
+            </div>
+        </div>
+
+        <!-- VIDEO 3 -->
+        <div class="card">
+            <a href="https://www.iplt20.com/video/63987/top-moments-of-tata-ipl-2025-?tagNames=iplt20" target="_blank">
+                <img src="https://www.iplt20.com/assets/images/ipl-logo-new-old.png">
+            </a>
+            <div class="card-content">
+                <h3>Top Moments IPL 2025</h3>
+                <p>Click to watch on official IPL website.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

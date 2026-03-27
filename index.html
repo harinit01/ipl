@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPL Era</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0b0f1a;
+    color: white;
+}
+
+/* NAVBAR */
+header {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background: linear-gradient(90deg, #0a0a0a, #1c1c1c);
+    box-shadow: 0 0 15px rgba(0,0,0,0.8);
+    z-index: 10;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #00c3ff;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #ddd;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #00c3ff;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px;
+    gap: 50px;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+    url('https://images.unsplash.com/photo-1593341646782-e0b495cff86d?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+}
+
+.watch-btn {
+    padding: 12px 25px;
+    background: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* VIDEO */
+.video-preview {
+    position: relative;
+    width: 420px;
+}
+
+.video-preview img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+    background: rgba(255,0,0,0.9);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.play-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: white;
+    color: red;
+}
+
+/* MATCH SECTION */
+.score-card {
+    margin: -60px auto 40px;
+    width: 80%;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.team {
+    flex: 1;
+    padding: 25px;
+    text-align: center;
+}
+
+.left {
+    background: #020617;
+}
+
+.right {
+    background: red;
+}
+
+/* CENTER LOGO */
+.center-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: #020617;
+}
+
+.logo-team {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.vs {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* IPL CARDS */
+.sports {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 280px;
+    background: #111827;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    text-align: center;
+    padding: 15px;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 25px red;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <div class="logo">
+        <img src="https://static.india.com/wp-content/uploads/2020/08/IPL-Logo.jpg">
+        <span>IPL ERA</span>
+    </div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="matches.html">MATCHES</a>
+        <a href="teams.html">TEAMS</a>
+        <a href="highlights.html">HIGHLIGHTS</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+
+    <!-- LEFT -->
+    <div class="hero-content">
+        <h1>IPL 2026 Season 🔥</h1>
+        <p>Get ready for the biggest cricket league</p>
+        <a href="https://www.hotstar.com/in/sports/cricket/preview-rcb-vs-srh/1271614637/watch?search_query=ipl" class="watch-btn">WATCH NOW</a>
+    </div>
+
+    <!-- RIGHT VIDEO -->
+    <div class="video-preview">
+        <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80">
+        <a href="https://www.hotstar.com/in/sports/cricket" target="_blank">
+            <div class="play-btn">▶</div>
+        </a>
+    </div>
+
+</section>
+
+<!-- MATCH -->
+<div class="score-card">
+
+    <div class="team left">
+        <p style="font-size:14px; color:#aaa;">Upcoming Match - 28 March 2026</p>
+        <h3>IPL Tomorrow Matches</h3>
+    </div>
+
+    <div class="team center-logo">
+        <img src="https://scores.iplt20.com/ipl/teamlogos/NVAlbtIyB81740555172aFPMviEPyJ1710927747rcb.png" class="logo-team">
+        <span class="vs">VS</span>
+        <img src="https://scores.iplt20.com/ipl/teamlogos/SRH.png" class="logo-team">
+    </div>
+
+    <div class="team right">
+        <h3>RCB vs SRH</h3>
+        <p>7:30 PM IST</p>
+    </div>
+
+</div>
+
+<!-- IPL SECTION -->
+<section class="sports">
+
+    <div class="card">
+        <a href="matches.html">
+            <img src="https://news24online.com/wp-content/uploads/2025/03/IPL-2025-Schedule.jpg">
+        </a>
+        <h3>Upcoming Matches</h3>
+    </div>
+
+    <div class="card">
+        <a href="teams.html">
+            <img src="https://www.thestatesman.com/wp-content/uploads/2026/03/IPL_X-1-1024x576.webp">
+        </a>
+        <h3>Teams</h3>
+    </div>
+
+    <div class="card">
+        <a href="highlights.html">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdPoZLri_gsnt3lgsAlxbNXALz_ystQWeCjQ&s">
+        </a>
+        <h3>Match Highlights</h3>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 IPL Era | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

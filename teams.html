@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPL Teams</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 🔥 DARK BACKGROUND */
+body {
+    color: white;
+
+    background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+        url('https://www.thestatesman.com/wp-content/uploads/2026/03/IPL_X-1-1024x576.webp');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background: linear-gradient(90deg, #0a0a0a, #1c1c1c);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #ddd;
+    font-size: 14px;
+}
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo span {
+    color: #00c3ff;
+}
+
+nav a:hover {
+    color: #00c3ff;
+}
+
+/* TITLE */
+.title {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.title h1 {
+    font-size: 60px;
+    font-weight: 800;
+
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    letter-spacing: 3px;
+}
+
+/* GRID */
+.teams {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    width: 80%;
+    margin: 50px auto;
+}
+
+/* CARDS */
+.card {
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+    color: white;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+}
+
+.card img {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+/* DARK GRADIENT TEAM CARDS */
+.csk { background: linear-gradient(135deg, #cfa300, #7a5c00); }
+.dc { background: linear-gradient(135deg, #002c6b, #8b0000); }
+.gt { background: linear-gradient(135deg, #0a1a2f, #5c4b00); }
+.kkr { background: linear-gradient(135deg, #2b0057, #a67c00); }
+.lsg { background: linear-gradient(135deg, #6b0020, #7a3e2e); }
+.mi { background: linear-gradient(135deg, #002c6b, #4a6fa5); }
+.pbks { background: linear-gradient(135deg, #8b0000, #5c2e00); }
+.rr { background: linear-gradient(135deg, #8b004f, #2c2a7a); }
+.rcb { background: linear-gradient(135deg, #8b0000, #000000); }
+.srh { background: linear-gradient(135deg, #b34700, #5c1a00); }
+
+.card h3 {
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* ARTICLE */
+.article {
+    width: 80%;
+    margin: 80px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    line-height: 1.8;
+    display: none;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    color: black;
+}
+
+.article h2 {
+    color: #ff512f;
+    margin-bottom: 15px;
+}
+</style>
+
+<script>
+function showTeam(team) {
+    const article = document.getElementById("article");
+    let content = "";
+
+    if(team === "CSK"){
+        content = "<h2>Chennai Super Kings</h2><p>Chennai Super Kings (CSK) is one of the most successful IPL franchises led by MS Dhoni. Known for consistency, calm leadership, and finishing ability.</p><p>They are called the Yellow Army and have a massive fan base.</p>";
+    }
+    else if(team === "MI"){
+        content = "<h2>Mumbai Indians</h2><p>Mumbai Indians is the most successful IPL team with multiple titles.</p><p>They dominate with strong squad depth and performance.</p>";
+    }
+    else if(team === "RCB"){
+        content = "<h2>Royal Challengers Bangalore</h2><p>RCB is famous for Virat Kohli and aggressive batting style.</p><p>They have one of the biggest fan bases.</p>";
+    }
+    else {
+        content = "<h2>"+team+"</h2><p>This IPL team is competitive with talented players and exciting matches.</p>";
+    }
+
+    article.innerHTML = content;
+    article.style.display = "block";
+    article.scrollIntoView({behavior: "smooth"});
+}
+</script>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div style="display:flex; align-items:center; gap:10px;">
+        <a href="index.html">
+            <img src="https://static.india.com/wp-content/uploads/2020/08/IPL-Logo.jpg" style="height:40px;">
+        </a>
+<div class="logo"><span>IPL</span> ERA</div>    </div>
+    </div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="matches.html">MATCHES</a>
+        <a href="teams.html">TEAMS</a>
+        <a href="highlights.html">HIGHLIGHTS</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
+
+<!-- TITLE -->
+<div class="title">
+    <h1>TEAMS</h1>
+</div>
+
+<!-- TEAM CARDS -->
+<div class="teams">
+
+<div class="card csk" onclick="showTeam('CSK')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/CSK.png">
+<h3>Chennai Super Kings</h3>
+</div>
+
+<div class="card dc" onclick="showTeam('DC')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/DC.png">
+<h3>Delhi Capitals</h3>
+</div>
+
+<div class="card gt" onclick="showTeam('GT')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/GT.png">
+<h3>Gujarat Titans</h3>
+</div>
+
+<div class="card kkr" onclick="showTeam('KKR')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/KKR.png">
+<h3>Kolkata Knight Riders</h3>
+</div>
+
+<div class="card lsg" onclick="showTeam('LSG')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/LSG.png">
+<h3>Lucknow Super Giants</h3>
+</div>
+
+<div class="card mi" onclick="showTeam('MI')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/MI.png">
+<h3>Mumbai Indians</h3>
+</div>
+
+<div class="card pbks" onclick="showTeam('PBKS')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/PBKS.png">
+<h3>Punjab Kings</h3>
+</div>
+
+<div class="card rr" onclick="showTeam('RR')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/RR.png">
+<h3>Rajasthan Royals</h3>
+</div>
+
+<div class="card rcb" onclick="showTeam('RCB')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/RCB.png">
+<h3>Royal Challengers Bangalore</h3>
+</div>
+
+<div class="card srh" onclick="showTeam('SRH')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/SRH.png">
+<h3>Sunrisers Hyderabad</h3>
+</div>
+
+</div>
+
+<!-- ARTICLE -->
+<div id="article" class="article"></div>
+
+</body>
+</html>

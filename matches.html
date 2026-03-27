@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPL Matches - Sports Era</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #e5e5e5;
+}
+
+/* 🔥 NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background: linear-gradient(90deg, #0a0a0a, #1c1c1c);
+    box-shadow: 0 0 15px rgba(0,0,0,0.8);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo span {
+    color: #00c3ff;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #ddd;
+    font-size: 14px;
+    letter-spacing: 1px;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00c3ff;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #00c3ff;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* MATCH ROW */
+.match-row {
+    display: flex;
+    align-items: center;
+    background: #f5f5f5;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+}
+
+/* LEFT DATE */
+.date-box {
+    width: 200px;
+    text-align: left;
+}
+
+.match-no {
+    border: 2px solid orange;
+    padding: 5px 10px;
+    display: inline-block;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.date-box h3 {
+    font-size: 18px;
+}
+
+.date-box p {
+    font-size: 12px;
+    color: gray;
+}
+
+/* TIMELINE */
+.timeline {
+    width: 2px;
+    background: gray;
+    height: 80px;
+    margin: 0 20px;
+}
+
+/* MATCH DETAILS */
+.match-details {
+    flex: 1;
+}
+
+.venue {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* TEAMS */
+.teams {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.team {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.team img {
+    width: 30px;
+}
+
+.vs {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logo img {
+    height: 40px;
+    object-fit: contain;
+}
+
+/* BUTTON */
+.btn {
+    background: #ff4d2d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+</style>
+
+</head>
+<body>
+
+<!-- 🔥 NAVBAR -->
+<header class="navbar">
+        <div class="logo">
+        <a href="index.html">
+            <img src="https://static.india.com/wp-content/uploads/2020/08/IPL-Logo.jpg" alt="Logo">
+        </a>
+<div class="logo"><span>IPL</span> ERA</div>    </div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="matches.html">MATCHES</a>
+        <a href="teams.html">TEAMS</a>
+        <a href="highlights.html">HIGHLIGHTS</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
+
+<div class="container">
+
+<!-- MATCH 1 -->
+<div class="match-row">
+    <div class="date-box">
+        <div class="match-no">MATCH 1</div>
+        <h3>MAR, SAT 28</h3>
+        <p>7:30 PM IST</p>
+    </div>
+
+    <div class="timeline"></div>
+
+    <div class="match-details">
+        <div class="venue">M Chinnaswamy Stadium, Bengaluru</div>
+
+        <div class="teams">
+            <div class="team">
+                <img src="https://scores.iplt20.com/ipl/teamlogos/NVAlbtIyB81740555172aFPMviEPyJ1710927747rcb.png">
+                RCB
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="team">
+                <img src="https://scores.iplt20.com/ipl/teamlogos/SRH.png">
+                SRH
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MATCH 2 -->
+<div class="match-row">
+    <div class="date-box">
+        <div class="match-no">MATCH 2</div>
+        <h3>MAR, SUN 29</h3>
+        <p>7:30 PM IST</p>
+    </div>
+
+    <div class="timeline"></div>
+
+    <div class="match-details">
+        <div class="venue">Wankhede Stadium, Mumbai</div>
+
+        <div class="teams">
+            <div class="team">
+                <img src="https://scores.iplt20.com/ipl/teamlogos/MI.png">
+                MI
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="team">
+                <img src="https://scores.iplt20.com/ipl/teamlogos/KKR.png">
+                KKR
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MATCH 3 -->
+<div class="match-row">
+    <div class="date-box">
+        <div class="match-no">MATCH 3</div>
+        <h3>MAR, MON 30</h3>
+        <p>7:30 PM IST</p>
+    </div>
+
+    <div class="timeline"></div>
+
+    <div class="match-details">
+        <div class="venue">ACA Stadium, Guwahati</div>
+
+        <div class="teams">
+            <div class="team">
+                <img src="https://scores.iplt20.com/ipl/teamlogos/sSNjJEkBAx1742900310RR---New-Logo.png">
+                RR
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="team">
+                <img src="https://scores.iplt20.com/ipl/teamlogos/CSK.png">
+                CSK
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MATCH 4 -->
+<div class="match-row">
+    <div class="date-box">
+        <div class="match-no">MATCH 4</div>
+        <h3>MAR, TUE 31</h3>
+        <p>7:30 PM IST</p>
+    </div>
+
+    <div class="timeline"></div>
+
+    <div class="match-details">
+        <div class="venue">New Chandigarh Stadium</div>
+
+        <div class="teams">
+            <div class="team">
+                <img src="https://upload.wikimedia.org/wikipedia/en/d/d4/Punjab_Kings_Logo.svg">
+                PBKS
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="team">
+                <img src="https://scores.iplt20.com/ipl/teamlogos/CSK.png">
+                GT
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+</body>
+</html>
