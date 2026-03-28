@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPL Teams</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 🔥 DARK BACKGROUND */
+body {
+    color: white;
+
+    background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+        url('https://www.thestatesman.com/wp-content/uploads/2026/03/IPL_X-1-1024x576.webp');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background: linear-gradient(90deg, #0a0a0a, #1c1c1c);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #ddd;
+    font-size: 14px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo span {
+    color: #00c3ff;
+}
+
+nav a:hover {
+    color: #00c3ff;
+}
+
+/* TITLE */
+.title {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.title h1 {
+    font-size: 60px;
+    font-weight: 800;
+
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    letter-spacing: 3px;
+}
+
+/* GRID */
+.teams {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    width: 80%;
+    margin: 50px auto;
+}
+
+/* CARDS */
+.card {
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+    color: white;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+}
+
+.card img {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+/* TEAM COLORS */
+.csk { background: linear-gradient(135deg, #cfa300, #7a5c00); }
+.dc { background: linear-gradient(135deg, #002c6b, #8b0000); }
+.gt { background: linear-gradient(135deg, #0a1a2f, #5c4b00); }
+.kkr { background: linear-gradient(135deg, #2b0057, #a67c00); }
+.lsg { background: linear-gradient(135deg, #6b0020, #7a3e2e); }
+.mi { background: linear-gradient(135deg, #002c6b, #4a6fa5); }
+.pbks { background: linear-gradient(135deg, #8b0000, #5c2e00); }
+.rr { background: linear-gradient(135deg, #8b004f, #2c2a7a); }
+.rcb { background: linear-gradient(135deg, #8b0000, #000000); }
+.srh { background: linear-gradient(135deg, #b34700, #5c1a00); }
+
+.card h3 {
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* ARTICLE */
+.article {
+    width: 80%;
+    margin: 80px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    line-height: 1.8;
+    display: none;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    color: black;
+}
+
+.article h2 {
+    color: #ff512f;
+    margin-bottom: 15px;
+}
+</style>
+
+<script>
+function showTeam(team) {
+    const article = document.getElementById("article");
+    let content = "";
+
+    if(team === "CSK"){
+        content = "<h2>Chennai Super Kings</h2>\
+        <p>Chennai Super Kings is one of the most popular teams in the IPL and is loved by fans all over India, especially in Chennai. The team is known for its consistency, strong performances, and calm leadership. From the beginning of the IPL, CSK has always been a strong team and has reached many finals, winning multiple titles. One of the main reasons for their success is the leadership of MS Dhoni, who is respected for his cool and smart decisions on the field. Fans also call him “Thala”, and his presence gives confidence to the entire team.</p>\
+        <p>CSK is also known for its loyal fan base, often called the “Yellow Army”. The home ground in Chennai is always filled with fans wearing yellow jerseys and cheering loudly for their team. Even when the team faces tough situations, the fans continue to support them without losing hope. This strong connection between the team and fans makes CSK very special compared to other teams.</p>\
+        <p>Another important thing about CSK is their team spirit. The players trust each other and play as a unit, which helps them handle pressure situations very well. Experienced players and young talents work together, creating a good balance in the team. CSK is not just about winning matches, but also about playing with confidence and enjoying the game.</p>\
+        <p>Overall, Chennai Super Kings is more than just a cricket team. It represents loyalty, leadership, and consistency, which is why it continues to be one of the most successful and respected teams in IPL history.</p>";
+    }
+    else if(team === "MI"){
+    content = "<h2>Mumbai Indians</h2>\
+    <p>Mumbai Indians is one of the most successful teams in IPL history. The team has won multiple titles and is known for performing well in crucial matches. Over the years, Mumbai Indians has built a strong reputation for consistency and smart gameplay. They have a well-balanced squad with experienced players and talented youngsters.</p>\
+    <p>One of the key strengths of Mumbai Indians is their ability to handle pressure situations. Even when the match is difficult, the players remain calm and make smart decisions. This quality has helped them win many close matches. Their batting lineup is strong, and their bowlers also play an important role in controlling the game.</p>\
+    <p>The team also focuses on developing young players. Many players have improved their skills after joining Mumbai Indians, which shows the strength of their team environment. They provide opportunities and support to help players grow.</p>\
+    <p>Mumbai Indians also has a very loyal fan base. Fans support the team in every season and expect them to perform well. The strong connection between the team and fans gives extra confidence to the players.</p>\
+    <p>Overall, Mumbai Indians is a powerful and well-organized team. With their experience, talent, and consistency, they are always one of the top contenders in the IPL.</p>";
+}
+    else if(team === "RCB"){
+        content = "<h2>Royal Challengers Bengaluru</h2>\
+        <p>After many seasons with losses and trolling, Royal Challengers Bengaluru finally won the IPL title in 2025. For many years, fans kept saying “Ee Sala Cup Namde.” Even when results were not good, they still believed. This time, it really happened, and it made everyone very happy.</p>\
+        <p>Now in IPL 2026, things are different. Earlier, RCB was trying to win the trophy. Now they have to defend it. This is not easy. Other teams will try harder to beat them. So RCB must play well in every match.</p>\
+        <p>Virat Kohli is still very important for the team. He has been with RCB for many years. He knows the team very well. His experience helps a lot in big matches.</p>\
+        <p>In the 2025 final, Punjab Kings played very well. It was a close match. They tried hard to win. Teams like Delhi Capitals and Lucknow Super Giants are also trying to win their first trophy. So the competition is strong.</p>\
+        <p>RCB fans always support the team. Even in bad seasons, they did not stop. Their support gives confidence to players. This is a big strength for RCB.</p>\
+        <p>But defending the title is not easy. In IPL, one bad match can change everything. So the team must stay focused and play well.</p>\
+        <p>Once again, fans will believe and say, “Ee Sala Cup Namde.” But the question is still there — can RCB do it again?</p>";
+    }
+    else if(team === "DC"){
+    content = "<h2>Delhi Capitals</h2>\
+    <p>Delhi Capitals is a team that has shown a lot of improvement in recent IPL seasons. Earlier, they struggled to perform well, but in the last few years, they have become a strong and competitive side. The team has a mix of young players and experienced cricketers, which gives them good balance.</p>\
+    <p>One of the main strengths of Delhi Capitals is their aggressive style of play. The players are not afraid to take risks and try to dominate the match. This approach has helped them win important games and reach the finals in one season. Even though they have not won a trophy yet, they have come very close.</p>\
+    <p>The team management has also focused on building a good squad. They have selected talented players who can perform in different situations. This has improved the overall performance of the team.</p>\
+    <p>Delhi Capitals also has a growing fan base. Fans are hopeful that the team will soon win their first IPL title. The support from fans motivates the players to perform better.</p>\
+    <p>Overall, Delhi Capitals is a team with strong potential. If they continue to improve and stay consistent, they can definitely become champions in the future.</p>";
+}
+    else if(team === "GT"){
+    content = "<h2>Gujarat Titans</h2>\
+    <p>Gujarat Titans is one of the newest teams in the IPL, but they made a strong impact from their very first season. The team quickly became successful by winning matches consistently and showing excellent teamwork. Their performance proved that even a new team can compete with experienced franchises.</p>\
+    <p>One of the biggest strengths of Gujarat Titans is their balanced squad. The team has a good mix of experienced players and young talents who contribute equally. Their players perform well in both batting and bowling, which makes them a strong opponent in any match.</p>\
+    <p>A key player for Gujarat Titans is Hardik Pandya. He is known for his powerful batting, useful bowling, and confident leadership. As a captain, he led the team very well and played an important role in their success. His all-round performance gives strength to the team in crucial moments.</p>\
+    <p>The team is also known for its smart strategies and calm approach under pressure. Even in difficult situations, the players stay focused and make the right decisions. This has helped them win many important matches.</p>\
+    <p>Overall, Gujarat Titans is a powerful and promising team in the IPL. With their talent, teamwork, and confidence, they are expected to remain one of the top teams in the coming seasons.</p>";
+}
+    else if(team === "KKR"){
+    content = "<h2>Kolkata Knight Riders</h2>\
+    <p>Kolkata Knight Riders is one of the most popular teams in the IPL and has had an exciting journey since the beginning of the tournament. In the early seasons, the team struggled to perform consistently. However, things changed when Gautam Gambhir became captain, leading the team to two IPL titles in 2012 and 2014. These victories made KKR one of the strong teams in IPL history.</p>\
+    <p>Over the years, KKR has built a reputation for playing aggressive and fearless cricket. The team has seen many ups and downs, but they have always managed to stay competitive. Their ability to bounce back from tough situations shows their strong team spirit.</p>\
+    <p>The team is currently guided by an experienced coaching staff, with Chandrakant Pandit as the head coach. His strategies and discipline have helped improve the team's performance. The support staff also plays an important role in maintaining player fitness and match preparation.</p>\
+    <p>Kolkata Knight Riders has a mix of talented players, including powerful batsmen, skilled bowlers, and excellent all-rounders. Players like Andre Russell and Sunil Narine have been key match-winners for the team over the years. Young players also get good opportunities to prove themselves.</p>\
+    <p>In recent seasons, KKR has shown signs of improvement and is working hard to return to its winning form. The team continues to fight strongly in matches and aims to win another IPL title. Their performance depends on consistency and teamwork throughout the season.</p>\
+    <p>Overall, Kolkata Knight Riders is a team with a rich IPL history, strong fan support, and great potential. With the right strategy and performances, they can once again become champions in the IPL.</p>";
+}
+    else if(team === "LSG"){
+    content = "<h2>Lucknow Super Giants</h2>\
+    <p>Lucknow Super Giants is one of the newest teams in the IPL, introduced in 2022. From the beginning, the team delivered strong performances and quickly became competitive. Reaching the playoffs in their early seasons shows their quality and determination.</p>\
+    <p>Despite their good performances, Lucknow Super Giants has not secured an IPL title yet. The team has faced difficulties in knockout matches, which has stopped them from lifting the trophy. However, they continue to improve with each season.</p>\
+    <p>The squad includes several key players who play an important role in matches. KL Rahul leads the side with consistent batting and calm decision-making. Marcus Stoinis contributes as a reliable all-rounder, while Nicholas Pooran adds strength with his aggressive batting in the middle order.</p>\
+    <p>The team has a balanced combination of batting and bowling, allowing them to compete in different match situations. Their focus on strategy and execution helps them stay competitive throughout the tournament.</p>\
+    <p>With continued improvement and better results in crucial matches, Lucknow Super Giants has the potential to win an IPL title in the coming seasons.</p>";
+}
+    else if(team === "PBKS"){
+    content = "<h2>Punjab Kings</h2>\
+    <p>Punjab Kings is entering the IPL 2026 season with strong confidence after an impressive performance in the previous year. In IPL 2025, the team played very well and reached the final after many seasons. Although they lost the match by a small margin, it gave them belief that they can compete with top teams.</p>\
+    <p>One of the players, Shashank Singh, expressed strong confidence that Punjab Kings can win the IPL trophy this season. This shows the positive mindset within the squad. The players are motivated and focused on improving their performance.</p>\
+    <p>The team is led by Shreyas Iyer, who brings stability and leadership. Under his captaincy, Punjab Kings has become more organized and competitive. The squad includes both young talents and experienced players, creating a good balance.</p>\
+    <p>In earlier seasons, consistency was a challenge for Punjab Kings. Now, with better planning and teamwork, they are aiming to convert their performances into success. Reaching the final has made the team stronger and more determined.</p>\
+    <p>Fans are hopeful this season as the team looks confident and well-balanced. With the right approach and performance, Punjab Kings has a strong chance to win their first IPL title.</p>";
+}
+    else if(team === "RR"){
+    content = "<h2>Rajasthan Royals</h2>\
+    <p>Rajasthan Royals is one of the original teams in the IPL and created history by winning the first season in 2008. Under the leadership of Shane Warne, the team surprised everyone with its performance and became champions. Since then, Rajasthan Royals has been known for discovering young talent and giving opportunities to new players.</p>\
+    <p>Over the years, the team has had mixed results, with some strong seasons and some challenging ones. However, they have remained competitive and continue to improve. Reaching the finals in recent seasons shows their progress and determination.</p>\
+    <p>The team is led by Sanju Samson, who plays an important role as both captain and batsman. Players like Jos Buttler and Yashasvi Jaiswal provide strength to the batting lineup, while the bowling unit also contributes effectively in matches.</p>\
+    <p>Rajasthan Royals focuses on developing young players and building a balanced squad. Their approach helps in creating future stars and maintaining team stability. The players show confidence and perform well in different situations.</p>\
+    <p>With a strong combination of talent and experience, Rajasthan Royals continues to aim for another IPL title. The team has the potential to achieve success with consistent performances.</p>";
+}
+    else if(team === "SRH"){
+    content = "<h2>Sunrisers Hyderabad</h2>\
+    <p>Sunrisers Hyderabad is a well-known team in the IPL, recognized for its strong bowling attack and disciplined style of play. The team won its first IPL title in 2016 and has remained competitive in many seasons. Their ability to defend challenging totals has made them a tough opponent.</p>\
+    <p>One of the most important players in the team's history is David Warner. He played a major role in leading Sunrisers Hyderabad to their 2016 title and was known for his aggressive batting and consistent performances. He is now part of Delhi Capitals, where he continues to contribute with his experience.</p>\
+    <p>The current squad includes talented players like Aiden Markram and Heinrich Klaasen, who provide strength in batting. The team focuses on maintaining a good balance between batting and bowling, which helps in handling different match situations.</p>\
+    <p>In recent seasons, Sunrisers Hyderabad has faced some challenges but is working hard to improve its performance. With better planning and consistent efforts, the team aims to return to winning form.</p>\
+    <p>With strong teamwork and skilled players, Sunrisers Hyderabad has the potential to achieve success in upcoming IPL seasons.</p>";
+}
+    else {
+        content = "<h2>"+team+"</h2><p>This IPL team is competitive with talented players and exciting matches.</p>";
+    }
+
+    article.innerHTML = content;
+    article.style.display = "block";
+    article.scrollIntoView({behavior: "smooth"});
+}
+</script>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div style="display:flex; align-items:center; gap:10px;">
+        <a href="index.html">
+            <img src="https://static.india.com/wp-content/uploads/2020/08/IPL-Logo.jpg" style="height:40px;">
+        </a>
+        <div class="logo"><span>IPL</span> ERA</div>
+    </div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="matches.html">MATCHES</a>
+        <a href="teams.html">TEAMS</a>
+        <a href="highlights.html">HIGHLIGHTS</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
+
+<div class="title">
+    <h1>TEAMS</h1>
+</div>
+
+<div class="teams">
+
+<div class="card csk" onclick="showTeam('CSK')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/CSK.png">
+<h3>Chennai Super Kings</h3>
+</div>
+
+<div class="card dc" onclick="showTeam('DC')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/DC.png">
+<h3>Delhi Capitals</h3>
+</div>
+
+<div class="card gt" onclick="showTeam('GT')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/GT.png">
+<h3>Gujarat Titans</h3>
+</div>
+
+<div class="card kkr" onclick="showTeam('KKR')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/KKR.png">
+<h3>Kolkata Knight Riders</h3>
+</div>
+
+<div class="card lsg" onclick="showTeam('LSG')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/LSG.png">
+<h3>Lucknow Super Giants</h3>
+</div>
+
+<div class="card mi" onclick="showTeam('MI')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/MI.png">
+<h3>Mumbai Indians</h3>
+</div>
+
+<div class="card pbks" onclick="showTeam('PBKS')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/PBKS.png">
+<h3>Punjab Kings</h3>
+</div>
+
+<div class="card rr" onclick="showTeam('RR')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/RR.png">
+<h3>Rajasthan Royals</h3>
+</div>
+
+<div class="card rcb" onclick="showTeam('RCB')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/RCB.png">
+<h3>Royal Challengers Bengaluru</h3>
+</div>
+
+<div class="card srh" onclick="showTeam('SRH')">
+<img src="https://scores.iplt20.com/ipl/teamlogos/SRH.png">
+<h3>Sunrisers Hyderabad</h3>
+</div>
+
+</div>
+
+<div id="article" class="article"></div>
+
+</body>
+</html>
